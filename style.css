@@ -577,6 +577,11 @@ svg
      font-family: 'Lato', sans-serif;
      font-size: 30px;
  }
+ .premium-service-sec
+ {
+     margin-top:9%!important;
+     margin-bottom: 9%;
+ }
 /* Premium Service section End  */
 
 /* Customer review section start */
