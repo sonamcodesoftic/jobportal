@@ -26,7 +26,10 @@
        <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
        <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet" />
        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-       <script>
+       
+       <link rel="stylesheet" type="text/css" href="http://www.prepbootstrap.com/Content/shieldui-lite/dist/css/light/all.min.css" />
+       <script type="text/javascript" src="http://www.prepbootstrap.com/Content/shieldui-lite/dist/js/shieldui-lite-all.min.js"></script>
+       <script type="text/javascript">
            $(document).ready(function() {
 
 $('.owl-carousel').owlCarousel({
@@ -91,7 +94,74 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
 });
 
 });
+
+
+
+
+
+
+
+
+
+jQuery(function ($) {
+        var data1 = [12, 3, 4, 2];
+        var data2 = [3, 9, 12, 14];       
+            
+        $(function () {            
+            $("#chart1").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },               
+                dataSeries: [{
+                    seriesType: "pie",
+                    enablePointSelection: true,
+                    data: data1
+                }]
+            });
+
+            $("#chart2").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                seriesSettings: {
+                    pie: {
+                        enablePointSelection: true,
+                        borderColor: 'black',
+                        borderWidth: 3,
+                        dataPointText:
+                            {
+                                style: {                                    
+                                    fontWeight: 'bold'
+                            }
+                        }
+                    }
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },               
+                dataSeries: [{
+                    seriesType: "pie",                    
+                    data: data2
+                }]
+            });
+
+       
+        });
+      
+    });
+
+
        </script>
+       
     </head>
    <body>
        <!-- Top Section Start -->
@@ -439,10 +509,100 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
            </div>
          </div>
       <!-- Premium Service Section End -->
-     
+
+
+
+
+
+      <!-- Employment Index Section Start -->
+
+       <div class="container employment-section mt-5 ">
+          <div class="row employment-sec-row mt-5">
+             <div class="col-md-12 mt-5">
+                 <h1 class="text-center">Employment Index</h1>
+             </div> 
+          </div>
+            <div class="row mt-5 mb-5">
+                <div class="col-md-3 card-col mt-4">
+                    <div class="card card-sec">
+                        <div class="card-header">
+                            <!-- <span>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                            </span> -->
+                            
+                            <h3 class="mt-2">31 Lakh+</h3>
+                            <p>reviews</p>
+                        </div>
+                        <div class="card-block">
+                            <div id="chart1"></div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-3 mt-4">
+                    <div class="card card-sec">
+                        <div class="card-header">
+                            <!-- <span>
+                                <i class="fa fa-money checked"></i>
+                                <i class="fa fa-money checked"></i>
+                                <i class="fa fa-money checked"></i>
+                                <i class="fa fa-money checked"></i>
+                            </span> -->
+                            
+                            <h3 class="mt-2">1 Crore+</h3>
+                            <p>Salaries</p>
+                        </div>
+                        <div class="card-block">
+                            <div id="chart1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-4">
+                    <div class="card card-sec">
+                        <div class="card-header">
+                            <!-- <span>
+                                <i class="fa fa-user checked"></i>
+                                <i class="fa fa-user checked"></i>
+                                <i class="fa fa-user checked"></i>
+                                <i class="fa fa-user checked"></i>
+                            </span> -->
+                            
+                            <h3 class="mt-2">1 Lakh+</h3>
+                            <p>Interviews</p>
+                        </div>
+                        <div class="card-block">
+                            <div id="chart1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-4">
+                    <div class="card card-sec">
+                        <div class="card-header">
+                            <!-- <span>
+                                <i class="fa fa-user checked"></i>
+                                <i class="fa fa-user checked"></i>
+                                <i class="fa fa-user checked"></i>
+                                <i class="fa fa-user checked"></i>
+                            </span> -->
+                            
+                            <h3 class="mt-2">55 Lakh+</h3>
+                            <p>Users/Month</p>
+                        </div>
+                        <div class="card-block">
+                            <div id="chart1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+       </div>
+
+      <!-- Employment Index Section Start -->
+
 
       <!-- Review Section Start -->
-      <div class=" mt-5 customer-review" id="customer-review-background">
+      <div class="mt-5 customer-review" id="customer-review-background">
             <div  id="testimonial_095" class="customer-review-background carousel slide testimonial_095_indicators testimonial_095_control_button thumb_scroll_x swipe_x ps_easeOutSine" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
                 <!-- Header of Slider -->
                 <div class="testimonial_095_header testimonial_095_header-sec mb-5">
@@ -637,28 +797,28 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
                    </div>
               </div>
               <div class="row search-sec-row">
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Skills</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By location</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By role</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Industry</button>
@@ -667,28 +827,28 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
                  </div> 
               </div>
               <div class="row search-sec-row">
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Skills</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By location</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By role</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Industry</button>
@@ -697,28 +857,28 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
                  </div> 
               </div>
               <div class="row search-sec-row">
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Skills</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By location</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By role</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Industry</button>
@@ -727,28 +887,28 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
                  </div> 
               </div>
               <div class="row search-sec-row">
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Skills</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By location</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By role</button>
                            </div>  
                       </div>
                  </div>
-                 <div class="col-md-3">
+                 <div class="col-md-3 ">
                       <div class="search options">
                            <div class="search-section mb-5">
                                <button class=" pt-2 pb-2 pr-4 pl-4 mt-3 ">Jobs By Industry</button>
@@ -838,25 +998,39 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12 mt-4">
-                 <!-- About Widget -->
-                 <div class="single-widget about">
-                        <!-- <h5>Office Location</h5> -->
-                        
-                        <ul class="list list-one">
-                            <a href=""><img src="images/logoimage.png" alt="" class=" mb-3"></a>
-                            <!-- <h6>Contact</h6> -->
-                            <li><i class="fa fa-map-marker"></i> <br>Bestech Business Tower , Mohali, Punjab</li>
-                            <!-- <li><i class="fa fa-headphones"></i>Phone: +91 8968711197</li> -->
-                            <li><i class="fa fa-envelope"></i><br><a href="#">abctest@gmail.com</a></li>
-                            <li><i class="fa fa-phone"></i><br><a href="#">+91 9852136476</a></li>
-                        </ul>	
-                    </div>
-                    <!--/ End About Widget -->
+                 <!-- Twitter Widget -->
+                 <div class="single-widget " >
+                    <ul class="list">
+                        <h5 class="mb-4">Users/Jobseekers</h5>
+                        <li class="mb-3"><a href="">Companies</a></li>
+                        <li class="mb-3"><a href="#">Reviews</a></li>
+                        <li class="mb-3"><a href="#">Salaries</a></li>   
+                        <li class="mb-3"><a href="#">Jobs</a></li>
+                        <li class="mb-3"><a href="#">Interviews</a></li>
+                        <li class="mb-3"><a href="#">Best Places to Work 2021</a></li>   
+                        <li class="mb-3"><a href="#">Practice Test</a></li>
+                    </ul>
+                </div>
+                <!--/ End Twitter Widget -->
                    
                 </div>
                 
                 <div class="col-lg-3 col-md-6 col-12 mt-4">
                     <!-- Twitter Widget -->
+                    <div class="single-widget " >
+                        <ul class="list">
+                            <h5 class="mb-4">Employers</h5>
+                            <li class="mb-3"><a href="#">Job Posting</a></li>
+                            <li class="mb-3"><a href="index.php">Create a new company</a></li>
+                            <li class="mb-3"><a href="#">Advertise with us</a></li>
+                            <li class="mb-3"><a href="#">Join mRecruiters</a></li>   
+                            <li class="mb-3"><a href="#">Access Resume Database</a></li>
+                        </ul>
+                    </div>
+                    <!--/ End Twitter Widget -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mt-4">
+                     <!-- Twitter Widget -->
                     <div class="single-widget " >
                         <ul class="list">
                             <h5 class="mb-4">Company</h5>
@@ -870,21 +1044,6 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
                     <!--/ End Twitter Widget -->
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 mt-4">
-                     <!-- Links Widget -->
-                     <div class="single-widget links" >
-                        <!-- <h5>Quick Links</h5> -->
-                        <ul class="list">
-                            <h5 class="mb-4">Solutions</h5>
-                            <li class="mb-3"><a href="index.html">Agent Assist Bot</a></li>
-                            <li class="mb-3"><a href="services.html">Customer Engagement</a></li>
-                            <li class="mb-3"><a href="about-us.html">Field Sales AI</a></li>   
-                            <li class="mb-3"><a href="contact.html">Customer Support</a></li>
-                            <li class="mb-3"><a href="contact.html">Lead Gen AI</a></li>
-                        </ul>
-                    </div>
-                    <!--/ End Links Widget -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 mt-4">
                     <!-- Links Widget -->
                     <div class="single-widget links" >
                         <!-- <h5>Resources</h5> -->
@@ -893,6 +1052,8 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
                             <li class="mb-3"><a href="privacypolicy.html">Privacy Policy</a></li>
                             <li class="mb-3"><a href="terms.html">Terms of Services</a></li>
                             <li class="mb-3"><a href="disclaimer.html">Disclaimer</a></li>
+                            <li class="mb-3"><a href="disclaimer.html">Security & Fraud</a></li>
+                            <li class="mb-3"><a href="disclaimer.html">Complaints</a></li>
                         </ul>
                     </div>
                     <!--/ End Links Widget -->
@@ -928,5 +1089,6 @@ $('.owl-item .show').parent().next().children('.item').addClass('next');
     <!--/ End Footer Bottom -->
 </footer>
    <!-- Footer Section End -->
+   
    </body>
 </html>
