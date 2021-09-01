@@ -891,4 +891,16 @@ button:focus {
         white-space: nowrap; 
     
     }
+    .unorder-list-footer
+    {
+        text-align: center;
+    }
+    .app-button
+    {
+        text-align: center;
+    }
+    .footer-botttom-sec
+    {
+        margin-top: 10px;
+    }
 }
